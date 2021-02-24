@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import store from './js/store/index';
+import { addIngredient } from './js/actions/index';
+
+window.store = store;
+window.addIngredient = addIngredient;
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
