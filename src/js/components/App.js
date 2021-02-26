@@ -4,6 +4,7 @@ import IngredientSelect from '../shared/containers/IngredientSelect';
 import connectField from '../shared/higherOrderComponents/connectField'
 import { formValueSelector, formValues, reduxForm } from 'redux-form/immutable'
 import compose from 'lodash/fp/flowRight'
+import { noMessageRequired } from '../helpers/validators'
 
 const ConnectedIngredientSelect = connectField(IngredientSelect)
 export const JIM_FORM = 'forms/JIM_FORM'
@@ -23,6 +24,7 @@ export class App extends React.PureComponent {
             <ConnectedIngredientSelect
                 labelOnSide
                 name="ingredient"
+                validate={[noMessageRequired]}
             />
             <div>
               <h2>Ingredients</h2>

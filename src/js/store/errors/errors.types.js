@@ -1,0 +1,1 @@
+export const SHOW_ERROR = 'showError/SHOW_ERROR'
