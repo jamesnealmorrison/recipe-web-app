@@ -4,7 +4,13 @@ import './index.css';
 import App from './js/components/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import store from './js/store/index';
+import { createBrowserHistory } from 'history'
+import configureStore from './js/store/configureStore'
+//import store from './js/store/index';
+
+const initialState = {}
+const history = createBrowserHistory()
+const store = configureStore(initialState, history)
 
 ReactDOM.render(
   <Provider store={store}>

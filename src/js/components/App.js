@@ -1,5 +1,4 @@
 import React from 'react';
-import List from './List';
 import IngredientSelect from '../shared/containers/IngredientSelect';
 import connectField from '../shared/higherOrderComponents/connectField'
 import { formValueSelector, formValues, reduxForm } from 'redux-form/immutable'
@@ -28,7 +27,6 @@ export class App extends React.PureComponent {
             />
             <div>
               <h2>Ingredients</h2>
-              <List />
             </div>
             <div>
               <h2>Add a new ingredient</h2>
