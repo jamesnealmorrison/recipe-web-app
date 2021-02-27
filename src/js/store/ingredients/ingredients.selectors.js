@@ -1,12 +1,6 @@
-export const selectIngredients = state => {
-console.log("JIM. IN selectIngredients.")
-    const ingredients =  state.ingredients.records
+export const selectIngredients = state => state.ingredients.records
         .toList()
         .sort((a, b) => a.name.localeCompare(b.name))
-    console.log('ingredients = ')
-    console.log(ingredients)
-    return ingredients
-}
 
 export const selectIngredientsForDropDownList = state => {
     const ingredients = state.ingredients.records

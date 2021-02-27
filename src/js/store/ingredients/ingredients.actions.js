@@ -12,6 +12,5 @@ export const getIngredients = () => async (dispatch, getState) => {
         { id: 1, name: "Boneless Skinless Chicken Breast" },
     ]
 
-    console.log('JIM!  In getIngredients.')
     dispatch(addIngredients(ingredients))
 }
