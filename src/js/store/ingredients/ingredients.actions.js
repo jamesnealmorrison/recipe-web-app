@@ -15,10 +15,6 @@ export const getIngredients = () => async (dispatch, getState) => {
 
     apiClient.get('/allIngredients')
         .then(function(response) {
-            console.log('In response function! response = ')
-            console.log(response)
-            console.log('response.data = ')
-            console.log(response.data)
             dispatch(addIngredients(response.data))
         })
         .catch(function (error) {
@@ -26,8 +22,5 @@ export const getIngredients = () => async (dispatch, getState) => {
             console.log(error)
         })
         .then(function() {
-            console.log('In always function.')
         })
-
-
 }

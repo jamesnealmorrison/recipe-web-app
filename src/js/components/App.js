@@ -18,17 +18,9 @@ export class App extends React.PureComponent {
             handleSubmit,
         } = this.props
         return (
-          <>
           <form onSubmit={handleSubmit}>
             <ConnectedIngredientSelect />
-            <div>
-              <h2>Ingredients</h2>
-            </div>
-            <div>
-              <h2>Add a new ingredient</h2>
-            </div>
-        </form>
-          </>
+          </form>
         )
     }
 }
