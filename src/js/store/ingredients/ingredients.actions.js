@@ -1,16 +1,33 @@
 import { ADD_INGREDIENTS } from './ingredients.types'
 
+const axios = require('axios')
+
 export const addIngredients = payload => ({
     type: ADD_INGREDIENTS,
     payload,
 })
 
 export const getIngredients = () => async (dispatch, getState) => {
-    // JIM FILL IN THIS STUFF
-    const ingredients = [
-        { id: 92, name: "Butternut Squash" },
-        { id: 1, name: "Boneless Skinless Chicken Breast" },
-    ]
+    const apiClient = axios.create({
+        baseURL: 'http://localhost:8080',
+        headers: {"Access-Control-Allow-Origin": "*"}
+    })
 
-    dispatch(addIngredients(ingredients))
+    apiClient.get('/allIngredients')
+        .then(function(response) {
+            console.log('In response function! response = ')
+            console.log(response)
+            console.log('response.data = ')
+            console.log(response.data)
+            dispatch(addIngredients(response.data))
+        })
+        .catch(function (error) {
+            console.log('In error function! error = ')
+            console.log(error)
+        })
+        .then(function() {
+            console.log('In always function.')
+        })
+
+
 }
