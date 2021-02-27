@@ -20,11 +20,7 @@ export class App extends React.PureComponent {
         return (
           <>
           <form onSubmit={handleSubmit}>
-            <ConnectedIngredientSelect
-                labelOnSide
-                name="ingredient"
-                validate={[noMessageRequired]}
-            />
+            <ConnectedIngredientSelect />
             <div>
               <h2>Ingredients</h2>
             </div>

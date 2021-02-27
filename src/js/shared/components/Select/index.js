@@ -12,10 +12,14 @@ import Select from 'react-select'
                  ]
 
 export class SelectBase extends React.PureComponent {
-
     render() {
+    console.log('Jim. this.props = ')
+    console.log(this.props)
+    console.log('options = ')
+    console.log(this.props.options)
+
         return (
-            <Select options={ options } />
+            <Select options={ this.props.options } />
         )
     }
 }
