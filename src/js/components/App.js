@@ -4,9 +4,9 @@ import connectField from '../shared/higherOrderComponents/connectField'
 import { formValueSelector, formValues, reduxForm } from 'redux-form/immutable'
 import compose from 'lodash/fp/flowRight'
 import { noMessageRequired } from '../helpers/validators'
+import Submit from '../shared/containers/Submit'
 
 const ConnectedIngredientSelect = connectField(IngredientSelect)
-export const JIM_FORM = 'forms/JIM_FORM'
 
 const onSubmit = () => console.log('SUBMITTED!')
 const onSubmitSuccess = () => console.log('SUBMITTED SUCCESS!')
@@ -20,6 +20,10 @@ export class App extends React.PureComponent {
         return (
           <form onSubmit={handleSubmit}>
             <ConnectedIngredientSelect />
+            <Submit
+                form='forms/JIM_FORM'
+                text='Submit Recipe'
+            />
           </form>
         )
     }
@@ -27,7 +31,7 @@ export class App extends React.PureComponent {
 
 export default compose(
   reduxForm({
-    form: JIM_FORM,
+    form: 'forms/JIM_FORM',
     onSubmit,
     onSubmitSuccess,
   }),
