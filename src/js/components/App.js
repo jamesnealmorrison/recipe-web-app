@@ -8,7 +8,11 @@ import Submit from '../shared/containers/Submit'
 
 const ConnectedIngredientSelect = connectField(IngredientSelect)
 
-const onSubmit = () => console.log('SUBMITTED!')
+const onSubmit = (values) => {
+    console.log('SUBMITTED!')
+    console.log('values = ')
+    console.log(values)
+}
 const onSubmitSuccess = () => console.log('SUBMITTED SUCCESS!')
 
 
